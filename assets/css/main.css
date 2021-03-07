@@ -48,8 +48,10 @@ blockquote, q {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
-	border-right:1px solid #00F;
-	border-bottom:1px solid #00F;
+	border-right:1px solid #007897;
+	border-bottom:1px solid #007897;
+	border-left:1px solid #007897;
+	border-top:1px solid #007897;
 }
 
 td {
