@@ -52,6 +52,11 @@ table {
 	border-bottom:1px solid #F00;
 }
 
+td {
+	border-left:1px solid #F00;
+	border-top:1px solid #F00
+}
+
 body {
 	-webkit-text-size-adjust: none;
 }
