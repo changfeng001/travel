@@ -45,30 +45,52 @@ blockquote, q {
 		content: none;
 	}
 
-/*
-table {
-        border-collapse: collapse;
-        border-spacing: 0;
-        border-right:2px solid #007897;
-        border-bottom:2px solid #007897;
-        border-left:2px solid #007897;
-        border-top:2px solid #007897;
-}
 
-td {
-        border-left:2px solid #007897;
-        border-top:2px solid #007897;
-}
-
-th {
-        border-left:2px solid #007897;
-        border-top:2px solid #007897;
-}
-*/
-
+/*  下面是表格样式  */
 table {font-size:13px;color:#333333;border-width: 1px;border-color: #999999;border-collapse: collapse;}
 table th {background:#b5cfd2 url('cell-blue.jpg');border-width: 1px;padding: 8px;border-style: solid;border-color: #999999;}
 table td {background:#dcddc0 url('cell-grey.jpg');border-width: 1px;padding: 8px;border-style: solid;border-color: #999999;}
+
+/* 下面是搜索框样式 */
+.searchBox{
+    width: 40%;
+    height: 35px;
+    border: 1px solid cadetblue;
+    outline: hidden;
+    border-radius: 2px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.inputBox{
+    border: none;
+    width: 84%;
+    height: 33px;
+    line-height: 33px;
+    outline: none;
+    padding-left: 10px;  
+    /* 改变光标的颜色 */
+    caret-color:#008B8B;
+    font-size: 14px;
+}
+
+
+.searchBtn{
+    width: 65px;
+    height: 35px;
+    border: none;
+    position: absolute;
+    right: 0;
+    outline: none;
+    color: white;
+    font-size: 15px;
+    background-color: cornflowerblue;
+}
+
+/* 鼠标滑过按钮时背景色改变 */
+.searchBtn:hover{
+    background-color: #497fdf;
+}
 
 body {
 	-webkit-text-size-adjust: none;
