@@ -36,36 +36,142 @@
 			<!-- Main -->
 			<div id="main">
 				<div class="container">
-					<div class="row main-row">
-						<div class="col-4 col-12-medium">
 
-							<section>
-								<h2>分地区住宿标准</h2>
-								<ul class="small-image-list">
-									<li>
-										<a href="locations/beijing.html"><img src="images/pic2.jpg" alt="" class="left" /></a>
-										<h4><a href="locations/beijing.html">北京</a></h4>
-									</li>
-									<li>
-										<a href="locations/tianjin.html"><img src="images/pic1.jpg" alt="" class="left" /></a>
-										<h4><a href="locations/tianjin.html">天津</a></h4>
-									</li>
-								</ul>
-							</section>
+                    <!--
+                    <div class="title">
+                        <p>请输入地区（城市）名称进行查询</p>
+                    </div>
+                    -->
+                    <div class="searchBox">
+                        <input class="inputBox" id="inputContent" placeholder="请输入地区（城市）名称查询">
+                        <button class="searchBtn" id="searchStandards" onclick="onSearch()">查询</button>
+                    </div>
 
-						</div>
-					</div>
+                    <div id="resultBeijing" style="display: none;">
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <!--
+                        <h4 display=none>差旅标准（单位：元/人/天）</h4>
+                        -->
+                        <p>查询结果如下（单位：元/人/天）</p>
+					    <table border="1">
+					    	<tr>
+					    		<th rowspan="2" colspan="2">地区（城市）</th>
+					    	        <th colspan="2">住宿标准</td>
+					    		<th rowspan="2">旺季地区</th>
+					    	        <th colspan="3">旺季浮动标准</td>
+					    	</tr>
+					    	<tr>
+					    		<th>部门副职及以上相当职务人员、研究员</th>
+					    		<th>其他人员</th>
+					    		<th>旺季期间</th>
+					    		<th>部门副职及以上相当职务人员、研究员</th>
+					    		<th>其他人员</th>
+					    	</tr>
+					    	<tr>
+					    		<td>北京</td>
+					    		<td>全市</td>
+					    		<td>500</td>
+					    		<td>450</td>
+					    		<td></td>
+					    		<td></td>
+					    		<td></td>
+					    		<td></td>
+					    	</tr>
+					    </table>
+                    </div>
+
+                    <div id="resultTianjin" style="display: none;">
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <!--
+                        <h4>差旅标准（单位：元/人/天）</h4>
+                        -->
+                        <p>查询结果如下（单位：元/人/天）</p>
+						<table border="1">
+							<tr>
+								<th rowspan="2" colspan="2">地区（城市）</th>
+							        <th colspan="2">住宿标准</td>
+								<th rowspan="2">旺季地区</th>
+							        <th colspan="3">旺季浮动标准</td>
+							</tr>
+							<tr>
+								<th>部门副职及以上相当职务人员、研究员</th>
+								<th>其他人员</th>
+								<th>旺季期间</th>
+								<th>部门副职及以上相当职务人员、研究员</th>
+								<th>其他人员</th>
+							</tr>
+							<tr>
+								<td rowspan="2">天津</td>
+								<td>6个中心城区、滨海新区、东丽区、西青区、津南区、北辰区、武清区、宝坻区、静海区、蓟县</td>
+								<td>380</td>
+								<td>330</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>宁河区</td>
+								<td>320</td>
+								<td>270</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+						</table>
+                    </div>
+
 				</div>
 			</div>
 
 		</div>
 
 		<!-- Scripts -->
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
+        <script type="text/javascript">  
+             /**
+             * js 前台搜索
+             * @param searchContent 搜索的内容
+             * @col 要搜索的哪一列，这里是第一列，从0开始数起  
+             */
+            function onSearch() {
+                setTimeout(function() { //因为是即时查询，需要用setTimeout进行延迟，让值写入到input内，再读取  
+                    var locationMap = new Map();
+                    locationMap.set("resultBeijing", "北京");
+                    locationMap.set("resultTianjin", "天津");
+
+                    //var inputContent = $("#inputContent").val();//获取input输入框的值
+                    var inputContent = ((document.getElementById('inputContent')).value).trim(); // 获取input输入框的值
+                    locationMap.forEach(function (value, key, map) {
+                        if (inputContent.indexOf(value) != -1) {
+                            var searchResultDiv = document.getElementById(key); //获取div的id标识
+                            searchResultDiv.style.display='';
+                        } else {
+                            var searchResultDiv = document.getElementById(key); //获取div的id标识
+                            searchResultDiv.style.display='none';
+                        }
+                    });
+
+/*
+                    if (inputContent.match("北京")) {
+                        var searchResultDiv = document.getElementById('resultBeijing'); //获取div的id标识
+                        searchResultDiv.style.display='';
+                    }
+                    if (inputContent.match("天津")) {
+                        var searchResultDiv = document.getElementById('resultTianjin'); //获取div的id标识
+                        searchResultDiv.style.display='';
+                    }
+                    */
+              
+                }, 20);//20为延时时间  
+            }   
+        </script>
 
 	</body>
 </html>
