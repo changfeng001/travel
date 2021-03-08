@@ -53,7 +53,7 @@ table td {background:#dcddc0 url('cell-grey.jpg');border-width: 1px;padding: 8px
 
 /* 下面是搜索框样式 */
 .searchBox{
-    width: 40%;
+    width: 80%;
     height: 35px;
     border: 1px solid cadetblue;
     outline: hidden;
