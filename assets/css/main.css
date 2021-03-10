@@ -47,7 +47,7 @@ blockquote, q {
 
 
 /*  下面是表格样式  */
-table {font-size:13px;color:#333333;border-width: 1px;border-color: #999999;border-collapse: collapse;}
+table {font-size:14px;color:#333333;border-width: 1px;border-color: #999999;border-collapse: collapse;}
 table th {background:#b5cfd2 url('cell-blue.jpg');border-width: 1px;padding: 8px;border-style: solid;border-color: #999999;}
 table td {background:#dcddc0 url('cell-grey.jpg');border-width: 1px;padding: 8px;border-style: solid;border-color: #999999;}
 
