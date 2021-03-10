@@ -4,12 +4,17 @@
     html5up.net | @ajlkn
     Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
-<html>
+<html manifest="demo.clearcache">
     <head>
-        <title>差旅查询系统</title>
+        <title>住宿费标准查询系统</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-        <link rel="stylesheet" href="assets/css/main.css" />
+
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Expires" content="0" />
+
+        <link rel="stylesheet" href="assets/css/main.css?time=New Date()" />
     </head>
     <body>
         <div id="page-wrapper">
@@ -22,7 +27,7 @@
 
                             
                             <header id="header">
-                                <h1><a href="index.html" id="logo">差旅查询系统</a></h1>
+                                <h1><a href="index.html" id="logo">住宿费标准查询系统</a></h1>
                                 <!--
                                 <nav id="nav">
                                     <a href="index.html">差旅政策</a>
@@ -46,7 +51,7 @@
                     </div>
                     -->
                     <div class="searchBox">
-                        <input class="inputBox" id="inputContent" placeholder="请输入省份或直辖市名称查询">
+                        <input class="inputBox" id="inputContent" onkeypress="onEnter()" placeholder="请输入省份或直辖市名称查询">
                         <button class="searchBtn" id="searchStandards" onclick="onSearch()">查询</button>
                     </div>
 
@@ -62,9 +67,9 @@
                         <table border="1">
                             <tr>
                                 <th rowspan="2" colspan="2">地区（城市）</th>
-                                    <th colspan="2">住宿标准</td>
+                                <th colspan="2">住宿标准</th>
                                 <th rowspan="2">旺季地区</th>
-                                    <th colspan="3">旺季浮动标准</td>
+                                <th colspan="3">旺季浮动标准</th>
                             </tr>
                             <tr>
                                 <th>部门副职及以上相当职务人员、研究员</th>
@@ -98,9 +103,9 @@
                         <table border="1">
                             <tr>
                                 <th rowspan="2" colspan="2">地区（城市）</th>
-                                    <th colspan="2">住宿标准</td>
+                                <th colspan="2">住宿标准</th>
                                 <th rowspan="2">旺季地区</th>
-                                    <th colspan="3">旺季浮动标准</td>
+                                <th colspan="3">旺季浮动标准</th>
                             </tr>
                             <tr>
                                 <th>部门副职及以上相当职务人员、研究员</th>
@@ -131,6 +136,102 @@
                         </table>
                     </div>
 
+                    <div id="resultHebei" style="display: none;">
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <p>查询结果（单位：元/人/天）</p>
+                        <table border="1">
+                            <tr>
+                                <th rowspan="2" colspan="2">地区（城市）</th>
+                                <th colspan="2">住宿标准</th>
+                                <th rowspan="2">旺季地区</th>
+                                <th colspan="3">旺季浮动标准</th>
+                            </tr>
+                            <tr>
+                                <th>部门副职及以上相当职务人员、研究员</th>
+                                <th>其他人员</th>
+                                <th>旺季期间</th>
+                                <th>部门副职及以上相当职务人员、研究员</th>
+                                <th>其他人员</th>
+                            </tr>
+                            <tr>
+                                <td rowspan="4">河北</td>
+                                <td rowspan="3">石家庄市、张家口市、秦皇岛市、廊坊市、承德市、保定市</td>
+                                <td rowspan="3">350</td>
+                                <td rowspan="3">300</td>
+                                <td>张家口市</td>
+                                <td>7~9月、11~3月</td>
+                                <td>525</td>
+                                <td>475</td>
+                            </tr>
+                            <tr>
+                                <td>秦皇岛市</td>
+                                <td>7~8月</td>
+                                <td>500</td>
+                                <td>450</td>
+                            </tr>
+                            <tr>
+                                <td>承德市</td>
+                                <td>7~9月</td>
+                                <td>580</td>
+                                <td>530</td>
+                            </tr>
+                            <tr>
+                                <td>其他地区</td>
+                                <td>310</td>
+                                <td>260</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div id="resultGuangdong" style="display: none;">
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <p>查询结果（单位：元/人/天）</p>
+                        <table border="1">
+                            <tr>
+                                <th rowspan="2" colspan="2">地区（城市）</th>
+                                <th colspan="2">住宿标准</th>
+                                <th rowspan="2">旺季地区</th>
+                                <th colspan="3">旺季浮动标准</th>
+                            </tr>
+                            <tr>
+                                <th>部门副职及以上相当职务人员、研究员</th>
+                                <th>其他人员</th>
+                                <th>旺季期间</th>
+                                <th>部门副职及以上相当职务人员、研究员</th>
+                                <th>其他人员</th>
+                            </tr>
+                            <tr>
+                                <td rowspan="2">广东</td>
+                                <td>广州市、珠海市、佛山市、东莞市、中山市、江门市</td>
+                                <td>450</td>
+                                <td>400</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>其他地区</td>
+                                <td>420</td>
+                                <td>370</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </table>
+                    </div>
+
                     <div id="resultQinghai" style="display: none;">
                         <br/>
                         <br/>
@@ -140,9 +241,9 @@
                         <table border="1">
                             <tr>
                                 <th rowspan="2" colspan="2">地区（城市）</th>
-                                    <th colspan="2">住宿标准</td>
+                                <th colspan="2">住宿标准</th>
                                 <th rowspan="2">旺季地区</th>
-                                    <th colspan="3">旺季浮动标准</td>
+                                <th colspan="3">旺季浮动标准</th>
                             </tr>
                             <tr>
                                 <th>部门副职及以上相当职务人员、研究员</th>
@@ -209,9 +310,9 @@
                         <table border="1">
                             <tr>
                                 <th rowspan="2" colspan="2">地区（城市）</th>
-                                    <th colspan="2">住宿标准</td>
+                                <th colspan="2">住宿标准</th>
                                 <th rowspan="2">旺季地区</th>
-                                    <th colspan="3">旺季浮动标准</td>
+                                <th colspan="3">旺季浮动标准</th>
                             </tr>
                             <tr>
                                 <th>部门副职及以上相当职务人员、研究员</th>
@@ -251,9 +352,9 @@
                         <table border="1">
                             <tr>
                                 <th rowspan="2" colspan="2">地区（城市）</th>
-                                    <th colspan="2">住宿标准</td>
+                                <th colspan="2">住宿标准</th>
                                 <th rowspan="2">旺季地区</th>
-                                    <th colspan="3">旺季浮动标准</td>
+                                <th colspan="3">旺季浮动标准</th>
                             </tr>
                             <tr>
                                 <th>部门副职及以上相当职务人员、研究员</th>
@@ -327,19 +428,35 @@
 
         <!-- Scripts -->
         <script type="text/javascript">  
+
+            /**
+            * 在input框处理回车事件
+            */
+            function onEnter() {
+                if (event.keyCode == 13) { 
+                    //点击回车要执行的事件
+                    event.cancelBubble = true;
+                    event.returnValue = false;
+
+                    onSearch();
+                }
+            }
+
              /**
-             * js 前台搜索
+             * 前台搜索
              */
             function onSearch() {
                 setTimeout(function() { //因为是即时查询，需要用setTimeout进行延迟，让值写入到input内，再读取  
                     var locationMap = new Map();
                     locationMap.set("resultBeijing", "北京");
                     locationMap.set("resultTianjin", "天津");
+                    locationMap.set("resultHebei", "河北");
+
+                    locationMap.set("resultGuangdong", "广东");
                     locationMap.set("resultQinghai", "青海");
                     locationMap.set("resultNingxia", "宁夏");
                     locationMap.set("resultXinjiang", "新疆");
 
-                    //var inputContent = $("#inputContent").val();//获取input输入框的值
                     var inputContent = ((document.getElementById('inputContent')).value).trim(); // 获取input输入框的值
                     locationMap.forEach(function (value, key, map) {
                         if (inputContent.indexOf(value) != -1) {
